@@ -8,7 +8,7 @@ function Header() {
       <div className="contenedor">
         <div className={styles.barra}>
          <Link href="/">
-            <Image src="/img/logo.svg" alt="GuitarLA" width={200} height={200} />
+            <Image src="/img/logo.svg" alt="GuitarLA" width={600} height={450} />
          </Link>
                 
          <nav className={styles.navegacion}>
