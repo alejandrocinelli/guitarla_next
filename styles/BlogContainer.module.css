@@ -10,7 +10,35 @@
 }
 
 .fecha {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color:var(--primary);
     margin-bottom: 1rem;
 }
+
+.enlace{
+    display: block;
+    margin-top: 2rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--negro);
+    border: 2px solid var(--primary);
+    padding: 1rem 5rem ;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.enlace:hover {
+    background-color: var(--primary);
+    color: var(--blanco);
+}
+
+.resumen{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+

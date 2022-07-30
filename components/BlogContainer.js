@@ -12,8 +12,11 @@ function BlogContainer({resp}) {
         <div>
                 <h3 className={styles.contenido.h3}>{resp.titulo}</h3>
                 <p className={styles.fecha}>{formaterDate( resp.published_at)}</p>
-                <p>{resp.resumen}</p>
-                <Link href={`/blog/${resp.id}`}> Ver mas
+                <p className={styles.resumen}>{resp.resumen}</p>
+                <Link href={`/blog/${resp.id}`}> 
+                <a className={styles.enlace}>
+                Ver Mas
+                </a>
                 </Link>   
         </div>
     </article>
