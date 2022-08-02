@@ -29,7 +29,8 @@ function Blog({resp}) {
 
 export async function getServerSideProps() {
 
-  const url ="http://localhost:1337/blogs/"
+  const url =`${process.env.API_URL}/blogs/`
+  
       const api = await fetch(url)
       const resp = await api.json()
      

@@ -9,6 +9,11 @@
     line-height: 1.2;
 }
 
+.blogContainer {
+    margin: 0 auto;
+    max-width: 80rem;
+    }
+
 .fecha {
     font-size: 1.5rem;
     color:var(--primary);
@@ -42,3 +47,6 @@
     overflow: hidden;
 }
 
+.texto{
+    white-space: pre-wrap;
+}
