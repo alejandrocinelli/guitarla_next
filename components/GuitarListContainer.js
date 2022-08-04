@@ -1,19 +1,23 @@
 import GuitarContainer from "./GuitarContainer"
 import Image from "next/image"
 import Link from "next/link"
+import styles from "../styles/GuitarListContainer.module.css"
 
 function GuitarListContainer({guitarra}) {
-   console.log(guitarra)
-   // console.log(guitarra.nombre)
+  
     const {descripcion, imagen, nombre, precio, url} = guitarra
   return (
-    <div>
-       <Image src={imagen[0].url} alt={`Imagen guitarra ${nombre}`} width={500} height={350} layout="responsive"/>
+    <div className={styles.guitarra}>
+       <Image src={imagen[0].url} alt={`Imagen guitarra ${nombre}`} width={180} height={350} layout="responsive"/>
 
-       <div>
-            <h2>{nombre}</h2>
-            <p>{descripcion}</p>
-            <p>Precio: {precio}</p>
+       <div className={styles.contenido}>
+            <h3>{nombre}</h3>
+            <p className={styles.resumen}>{descripcion}</p>
+            <p className={styles.precio}>${precio}</p>
+            <Link href={`/guitarras/${url}`}> 
+            <a className={styles.enlace} >
+                Ver Producto</a> 
+            </Link>
             
        </div>
     </div>

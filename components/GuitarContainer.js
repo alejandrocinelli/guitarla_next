@@ -1,10 +1,11 @@
 import Tienda from "../pages/tienda"
 import GuitarListContainer from "../components/GuitarListContainer"
+import styles from "../styles/GuitarContainer.module.css"
 
 function GuitarContainer({guitarras}) {
    
   return (
-    <div>{guitarras.map(guitarra => (
+    <div className={styles.guitarContainer}>{guitarras.map(guitarra => (
         <GuitarListContainer key={guitarra.id} guitarra={guitarra} />
     ))}</div>
   )
