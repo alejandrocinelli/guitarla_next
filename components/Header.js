@@ -23,6 +23,11 @@ function Header({guitarra}) {
           <Link href="/nosotros">Nosotros</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/tienda">Tienda</Link>
+          <Link href="/carrito">
+            <a>
+              <Image src="/img/carrito.png" alt="Carrito de compras" width={30} height={25} />
+            </a>
+          </Link>
          </nav>
          </div>
          {guitarra && ( 

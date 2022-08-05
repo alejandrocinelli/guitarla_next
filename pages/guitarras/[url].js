@@ -1,9 +1,32 @@
 import Image from "next/image";
 import styles from "../../styles/GuitarListContainer.module.css";
 import Layout from "../../components/Layout";
+import { useState } from "react";
 
-const Producto = ({ resp }) => {
-  const { descripcion, precio, imagen, nombre } = resp;
+const Producto = ({ resp, agregarCarrito }) => {
+
+  const [cantidad, setCantidad] = useState(1);
+
+  const { descripcion, precio, imagen, nombre, id } = resp;
+
+  const handlerSubmit = (e) => {
+    e.preventDefault();
+   
+    if(cantidad <= 0 ){
+      alert("Cantidad no valida");
+      return;
+    }
+    //agregar al carrito 
+
+    const guitarraSeleccionada = {
+      id,
+      imagen: imagen[0].url,
+      nombre,
+      precio,
+      cantidad,
+    }
+    agregarCarrito(guitarraSeleccionada);
+  }
 
   return (
     <Layout pagina={`Producto - ${nombre}`}>
@@ -21,12 +44,16 @@ const Producto = ({ resp }) => {
           <p className={styles.resumen}>{descripcion}</p>
           <p className={styles.precio}>${precio}</p>
           {/* lo dejamos asi por el momento para darle forma pero el form lo implementaria mas con un useState*/}
-          <form className={styles.formulario}>
+          <form className={styles.formulario} onSubmit={handlerSubmit} >
             <label htmlFor="cantidad">Cantidad</label>
-            <select>
+            <select value={cantidad}
+                    onChange={(e) => setCantidad(e.target.value)}
+            >
+                <option value="0">-- Seleccione --</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="4">4</option>
             </select>
             <input type="submit" value="Agregar al Carrito"></input>
           </form>
